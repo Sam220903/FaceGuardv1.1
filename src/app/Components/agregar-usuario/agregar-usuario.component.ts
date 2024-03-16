@@ -142,12 +142,41 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
     this.agregarUsuarioService.upload(data).subscribe({
       next: (data) => {
         console.log(data);
+        alert('¡Usuario agregado exitosamente!');
+        form.reset();
+        this.preview = '';
+        this.upbytesPhoto = '';
+        const canvas = document.querySelector('.canvas') as HTMLCanvasElement;
+        if (canvas) {
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 300,300);
+          }
+        }
       },
       error: (error) => {
         console.error(error);
+        alert('Error al agregar usuario');
       }
     }); 
     
 }
+
+  cancel(event:any): void {
+    event.preventDefault();
+    const form = document.getElementById("formData") as HTMLFormElement;
+    const canvas = document.querySelector('.canvas') as HTMLCanvasElement;
+    form.reset();
+    this.preview = '';
+    this.upbytesPhoto = '';
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 300,300);
+      }
+    }
+  }
 
 }
