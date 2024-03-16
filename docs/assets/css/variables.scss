@@ -1,0 +1,20 @@
+:root,
+ :root.light {
+    --bg-color: #E4F9FF;
+    --font-size-txt: 1em;
+    --font-size-h1: 2em;
+    --bg-color-sections: #009688;
+    --font-color-sub: rgba(0, 0, 0, .54);
+    --font-color-main: #000;
+    --bg-color-card: #fff;
+}
+
+:root.dark {
+    --bg-color: #222640;
+    --font-size-txt: 1em;
+    --font-size-h1: 2em;
+    --bg-color-sections: #010440;
+    --font-color-sub:   #8184BC;
+    --font-color-main: #fff;
+    --bg-color-card: #010326;
+}
