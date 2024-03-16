@@ -4,6 +4,15 @@ h3{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
+h5{
+    color: #FFFFFF;
+  }
+
+  .card-body{
+    background-color: #38454F;
+  }
+
 .user-card {
     margin-bottom: 20px;
   }
@@ -27,6 +36,15 @@ h3{
   .card-body h5 {
     margin: 0;
     font-size: 18px;
-    color: #333;
+    color: #FFFFFF;
   }
+
+
+  h2{
+    color: #FFFFFF;
+  }
+
+
+
+
   
