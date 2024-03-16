@@ -47,14 +47,15 @@ export class ConsultaComponent {
         const div = document.createElement('div');
         div.classList.add('col', 'col-4', 'user-card'); // Agregamos la clase 'user-card' para aplicar estilos
         
-        const card = document.createElement('div');
-        card.classList.add('card');
-    
+        
+        
+
         const img = document.createElement('img');
         img.src = 'data:image/jpeg;base64,' + user.foto;
         img.alt = '';
         img.width = 200;
-        img.classList.add('mx-auto');
+        img.className = 'img-small mx-auto d-block';
+        img.setAttribute('style', 'border-radius: 25%; margin-top: 10px; margin-bottom: 10px;');
         
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
@@ -62,11 +63,12 @@ export class ConsultaComponent {
         const h5 = document.createElement('h5');
         h5.textContent = user.nombre;
         h5.classList.add('card-title', 'text-center');
+        h5.setAttribute('style', 'color: #FFFFFF;');
     
         cardBody.appendChild(h5);
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        div.appendChild(card);
+        
+        div.appendChild(img);
+        div.appendChild(cardBody);
         
         if (row) { // Si hay una fila creada, agregamos la carta a esa fila
           row.appendChild(div);
