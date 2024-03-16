@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AgregarUsuarioService {
 
-  private baseURL = 'http://localhost:8080/usuarios/registrar'
+  private baseURL = 'https://access-control-api-odv7.onrender.com/usuarios/registrar'
   constructor(private httpClient : HttpClient) { }
 
   upload(formData: FormData): Observable<any> {
