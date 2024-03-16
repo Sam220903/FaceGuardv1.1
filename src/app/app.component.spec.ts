@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'FaceGuardv1.1'`, () => {
+  it(`should have as title 'Web-Reconocimiento'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('FaceGuardv1.1');
+    expect(app.title).toEqual('Web-Reconocimiento');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('FaceGuardv1.1 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Web-Reconocimiento app is running!');
   });
 });

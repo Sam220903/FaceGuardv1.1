@@ -1,0 +1,27 @@
+.item-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-form-field.mat-form-field{
+    visibility: visible;
+}
+
+mat-label{
+    visibility: visible;
+}
+
+input{
+    visibility: visible;
+}
+
+label{
+    font-weight: 600; 
+    font-size: medium; 
+    color: white;
+}
+
+
+
+

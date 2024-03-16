@@ -1,0 +1,21 @@
+.nav-link span {
+	color: white;
+	/* Cambia el color de los nombres de los menús */
+}
+
+.barra-item {
+	display: inline-block;
+	margin: 5px;
+	padding: 10px;
+	text-decoration: none;
+	color: #000;
+	background-color: #a2c239;
+	border: 1px solid #a2c239;
+	border-radius: 5px;
+	transition: background-color 0.2s;
+}
+
+.barra-item:hover {
+	background-color: #87a323;
+	/* Cambia el color al pasar el cursor sobre un elemento */
+}

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+	background-color: #03A6A6;
+	/* Cambia este valor al color deseado */
+}
+
+body.dark-theme{
+	background-color: #043a3a;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+label {
+	font-family:sans-serif;
+}
+
+:root{
+	/* Colores de objetos*/
+	--primary-color: #1D2429;
+	--secondary-color: #2F3A42;
+	--tertiary-color: #38454F;
+	--quarternary-color: #657E8F;
+	--quinary-color: #93B6CF;
+
+	/* Colores de texto */
+	--font-primary-color: #FFFFFF;
+	--font-secondary-color: #B5B5B5;
+	--font-tertiary-color: #7F7F7F;
+	--font-quarternary-color: #4F4F4F;
+	--font-quinary-color: #2F2F2F;
+}
+
+
+
+

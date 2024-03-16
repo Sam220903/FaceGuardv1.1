@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./configuracion.component.css']
 })
 export class ConfiguracionComponent {
+  switchToDarkTheme(){
+    document.body.classList.toggle('dark-theme');
+  }
+  switchToLightTheme(){
+    document.body.classList.toggle('dark-theme', false);
+  }
+  switchToLuminisoftTheme(){
 
+  }
 }
+

@@ -1,1 +1,121 @@
-<p>reportes works!</p>
+<div>
+    <div class="row text-center mt-4">
+        <h2 class="" style="font-weight: 500; color: white;"> Generar reportes</h2>
+    </div>
+    
+    <div class="row mt-4 mb-2">
+    
+        <div class = "col-4 md-5">
+            <form action="/request_reports" method="POST" autocomplete="on" enctype="multipart/form-data">
+            
+                <div class="card card-body" style="border-color: white; background-color: #434343; font-weight: 500; color: white;">
+
+                    <div class="form-group" appearance="outline">
+                        <label for="Nombre_label" class="form-label mt-2">Nombre</label>
+                        <input type="text" name="Nombre_buscar" placeholder="-- Introduzca nombre --" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Apellido_label" class="form-label mt-2">Apellido</label>
+                        <input type="text" name="Apellido_buscar" placeholder="-- Introduzca apellido --" class="form-control">
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="Rol_label" class="form-label mt-2">Rol</label>
+                        <select class="form-select" id="Select_rol" name="Rol_buscar">
+                            <option value="">-- Seleccione rol --</option>
+                            <option>Profesor</option>
+                            <option>Estudiante</option>
+                        </select>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="Select_fecha" class="form-label mt-2">Carrera</label>
+                        <select class="form-select" id="Select_fecha" name="Carrera_buscar">
+                            <option value="">-- Seleccione fecha --</option>
+                            <option>Ingeniería de Software</option>
+                            <option>Ingeniería en Ciencia de Datos</option>
+                            <option>Ingeniería en Computación y sistemas</option>
+                    
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Select_tiempo_activo" class="form-label mt-2">Tiempo activo</label>
+                        <select class="form-select" id="Select_tiempo_activo" name="Tiempo_buscar">
+                            <option value="">-- Seleccione tiempo --</option>
+                            <option>Menos de una hora</option>
+                            <option>De 1 a 3 horas</option>
+                            <option>De 3 a 5 horas</option>
+                            <option>De 5 a 8 horas</option>
+                            <option>Más de 8 horas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg mt-3 mb-2">
+                            Buscar
+                        </button>
+                    </div>
+
+
+                </div>
+        
+            </form>
+        </div>
+    
+        <div class="col-md-8">
+            <table class="table-secondary table table-hover">
+                <thead class="ml-4">
+                    <tr class="table-active">
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Carrera</th>
+                        <th>Hora de entrada</th>
+                        <th>Hora de salida</th>
+                        <th>Tiempo activo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>    
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>    
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>    
+                            <td></td>
+                        </tr>
+                </tbody>
+    
+            </table>
+    
+            
+            
+            <button id="btnExportar" class="btn btn-success">
+                <i class = "fas fa-file excel"></i>Exportar resultados a excel
+            </button>
+    
+            
+    
+        </div>
+    </div>
+    
+</div>
