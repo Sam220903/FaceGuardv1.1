@@ -7,7 +7,7 @@ import { User } from 'src/app/Core/user';
   providedIn: 'root'
 })
 export class ConsultarUsuariosService {
-  private baseURL = 'http://localhost:8080/usuarios'
+  private baseURL = 'https://access-control-api-odv7.onrender.com/usuarios'
   constructor(private httpClient: HttpClient) { }
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.baseURL}`);
