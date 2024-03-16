@@ -1,5 +1,6 @@
+<!--
+	
 
-<!-- npm i bootstrap-icons -->
 <div class="row" style="padding-left: 50px; padding-top: 40px; padding-bottom: 20px;">
 
 	<div class="col d-flex justify-content-center">
@@ -168,5 +169,24 @@
 	</div>
 
 	
+</div>
+-->
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1 class="text-center" style="color: white">Consultar Usuarios</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-3" *ngFor="let user of users">
+			<div class="card">
+				<img [src]="'data:image/jpeg;base64'+user.foto" alt="">
+				<div class="card-body">
+					<h5>{{user.nombre}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 

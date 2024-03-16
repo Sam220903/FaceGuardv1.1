@@ -3,3 +3,30 @@
 h3{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.user-card {
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-body h5 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  

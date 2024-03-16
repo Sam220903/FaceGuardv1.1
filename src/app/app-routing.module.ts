@@ -7,6 +7,7 @@ import { EditarUsuariosComponent } from './Components/Usuarios/editar-usuarios/e
 import { EliminarUsuariosComponent } from './Components/Usuarios/eliminar-usuarios/eliminar-usuarios.component';
 import { ReportesComponent } from './Components/reportes/reportes.component';
 import { ConfiguracionComponent } from './Components/configuracion/configuracion.component';
+import { ConsultaMensajesComponent } from './Components/Usuarios/consulta-mensajes/consulta-mensajes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'Eliminar-Usuarios', component: EliminarUsuariosComponent }, 
   { path: 'Reportes', component: ReportesComponent },
   { path : 'Config', component: ConfiguracionComponent },
+  { path : 'Consulta-Mensajes', component: ConsultaMensajesComponent },
 ];
 
 @NgModule({
