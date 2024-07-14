@@ -17,9 +17,39 @@ input{
 }
 
 label{
-    font-weight: 600; 
-    font-size: medium; 
+    font-weight: 600;
+    font-size: medium;
     color: white;
+}
+
+
+#btnAccept{
+  margin-right: 10px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+
+#btnCancel{
+  margin-left: 10px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+
+#btnAccept:hover{
+  font-size: 21px;
+  transition: 0.5s;
+}
+
+#btnCancel:hover{
+  font-size: 21px;
+  transition: 0.5s;
+}
+
+#takePhoto {
+  font-weight: 500;
+  border-radius: 25px;
 }
 
 

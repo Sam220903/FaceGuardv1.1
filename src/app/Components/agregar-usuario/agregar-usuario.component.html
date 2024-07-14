@@ -6,12 +6,12 @@
 	</div>
 
 	<div class="container">
-
-		<div class="row">
+    <form action="" method="POST" autocomplete="on" enctype="multipart/form-data" id="formData" (submit)="sendInfo($event)">
+		<div class="row mb-5">
 
 			<div class="col-md-6">
 					<div class="col">
-						<form action="" method="POST" autocomplete="on" enctype="multipart/form-data" id="formData" (submit)="sendInfo($event)">
+
 							<div class="row">
 								<div class="col-11 align-items-center " style="padding-right: 5%; padding-left: 5%;">
 									<div class="col">
@@ -21,7 +21,7 @@
 											alt="Fotografía a subir" width="300px" height="300px"
 											id="photo">
 										</canvas>
-										
+
 									</div>
 									<div class="form-group">
 										<label for="photoFile" class="form-label mt-4">Subir Fotografía...</label>
@@ -30,25 +30,20 @@
 											(input)="captureFile($event)"
 											style="border-color: white; background-color: #434343; color: white;">
 									</div>
-					
-					
+
+
 									<div class="form-group">
 										<label for="name" class="form-label mt-2" >Nombre</label>
 										<input type="text" class="form-control" id="name" name="name">
+                    <label for="last-name" class="form-label mt-2">Apellido</label>
+                    <input type="text" class="form-control" id="last-name" name="last-name">
+                    <label for="grade" class="form-label mt-2">Carrera</label>
+                    <input type="text" class="form-control" id="grade" name="grade">
 									</div>
-									
-									<div class="text-center mt-5">
-										<div class="d-inline-block">
-											<button type="button" class="btn btn-primary btn-lg" (click)="sendInfo($event)">Agregar</button>
 
-										</div>
-										<div class="d-inline-block ml-2">
-											<button class="btn btn-danger btn-lg" (click)="cancel($event)">Cancelar</button>
-										</div>
-									</div>
+
 								</div>
 							</div>
-						</form>
 
 
 					</div>
@@ -59,7 +54,7 @@
 				<h3 class="text-center" style="font-weight: 500; color: white; padding-bottom: 25px;"> Tomar fotografía </h3>
 
 				<div class="row" style="padding-bottom: 20px;">
-					
+
 					<div class="col">
 						<div class="form-check form-switch" style="padding-left: 60px;" >
 							<input class="form-check-input" type="checkbox" role="switch" id="camaraControl" checked
@@ -72,19 +67,30 @@
 
 					<div class="col">
 						<div class="d-flex justify-content-center">
-							<button type="button" class="btn btn-danger" (click)="captureImage()"
+							<button type="button" class="btn btn-danger" id="takePhoto" (click)="captureImage()"
 							style="width: 200px; height: 50px; font-size: x-large;">Tomar foto </button>
 						</div>
 					</div>
 				</div>
-				
+
 				<div style=" text-align: center;">
 					<video id="video" autoplay="true"> </video>
 				</div>
 
+        <div class="text-center mt-5">
+          <div class="d-inline-block">
+            <button type="button" class="btn btn-primary btn-lg" id="btnAccept" (click)="sendInfo($event)">Agregar</button>
+
+          </div>
+          <div class="d-inline-block ml-2">
+            <button class="btn btn-danger btn-lg" id="btnCancel" (click)="cancel($event)">Cancelar</button>
+          </div>
+        </div>
+
 			</div>
 
 		</div>
+  </form>
 
 	</div>
 </div>
