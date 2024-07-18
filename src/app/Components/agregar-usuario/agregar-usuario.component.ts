@@ -2,7 +2,24 @@ import { Component, OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AgregarUsuarioService } from 'src/app/services/agregar-usuario.service';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBnCQ4ZlY1b3afpH67X8xpeMNFaMsmW-fk",
+  authDomain: "lumini-security.firebaseapp.com",
+  databaseURL: "https://lumini-security-default-rtdb.firebaseio.com",
+  projectId: "lumini-security",
+  storageBucket: "lumini-security.appspot.com",
+  messagingSenderId: "19566405579",
+  appId: "1:19566405579:web:47de9ddc375773c2c3784e",
+  measurementId: "G-PJ0E5MELHH"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
 
 @Component({
   selector: 'app-agregar-usuario',
@@ -11,7 +28,7 @@ import { AgregarUsuarioService } from 'src/app/services/agregar-usuario.service'
 })
 
 export class AgregarUsuarioComponent implements OnInit, OnDestroy {
-  
+
   public preview: string = '';
   videoRef: any;
   camaraControl = document.querySelector('#camaraControl');
@@ -21,11 +38,13 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
 
 
   constructor(private sanitizer: DomSanitizer, private agregarUsuarioService: AgregarUsuarioService) {
-    
+
   }
 
+
+
   // Convertir imagen a base64
-  extractBase64 = (file: any) => {
+ extractBase64 = (file: any) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -68,7 +87,7 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
     .then((stream) => {
       this.videoRef.srcObject = stream;
     });
-    
+
   }
 
   stopCamera() {
@@ -107,6 +126,7 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
     }
   }
 
+
   captureFile(event : any) : void{
     const image = event.target.files[0];
     console.log(image);
@@ -125,11 +145,11 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
             ctx.drawImage(img, 0, 0, 300,300);
           }
         }
-      }  
-    }) 
+      }
+    })
   }
 
-  sendInfo(event:any): void {
+  /*sendInfo(event:any): void {
     event.preventDefault();
     const form = document.getElementById("formData") as HTMLFormElement;
     const name = form.elements.namedItem("name") as HTMLInputElement;
@@ -159,8 +179,49 @@ export class AgregarUsuarioComponent implements OnInit, OnDestroy {
         console.error(error);
         alert('Error al agregar usuario');
       }
-    }); 
-    
+    });
+
+}*/
+
+  async sendInfo(event:any): Promise<void> {
+    event.preventDefault();
+    const form = document.getElementById("formData") as HTMLFormElement;
+    const name = form.elements.namedItem("name") as HTMLInputElement;
+
+    const data = new FormData();
+    data.append('nombre', name.value);
+    data.append('foto', this.upbytesPhoto);
+
+    // Get a reference to the Firestore service
+    const db = getFirestore(app);
+
+    // Create a new document in Firestore
+    await setDoc(doc(db, "users", name.value), {
+      nombre: name.value,
+      foto: this.upbytesPhoto
+    });
+
+    this.agregarUsuarioService.upload(data).subscribe({
+      next: (data) => {
+        console.log(data);
+        alert('¡Usuario agregado exitosamente!');
+        form.reset();
+        this.preview = '';
+        this.upbytesPhoto = '';
+        const canvas = document.querySelector('.canvas') as HTMLCanvasElement;
+        if (canvas) {
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 300,300);
+          }
+        }
+      },
+      error: (error) => {
+        console.error(error);
+        alert('Error al agregar usuario');
+      }
+    });
 }
 
   cancel(event:any): void {
